@@ -1,8 +1,8 @@
 function _fish_flake_init
-    if not set -q $argv[1]
-        set -l template "github:nixos/templates#utils-generic"
-    else
-        set -l template $argv[1]
+    set -f template "github:nixos/templates#utils-generic"
+
+    if set -q argv[1]
+        set template $argv[1]
     end
 
     if test -f flake.nix

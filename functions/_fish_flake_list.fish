@@ -4,11 +4,18 @@ function _fish_flake_list
         return 2
     end
 
-    nix eval .#devShells.\
-      (nix eval --raw \
+    set -l sys (nix eval --raw \
       --impure \
-      --expr "builtins.currentSystem").\
-      default.buildInputs --json 2>/dev/null \
-      | string match -r '"[^"]+"' \
+      --expr "builtins.currentSystem" 2>/dev/null)
+
+    set -l json (nix eval .#devShell.$sys.buildInputs --json 2>/dev/null)
+
+    if test -z "$json"
+        echo (set_color red) "no devShell found in flake.nix"
+        return 1
+    end
+
+    echo $json \
+      | string match -a -r '"[^"]+"' \
       | string trim -c '"'
 end

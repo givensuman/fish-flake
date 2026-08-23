@@ -15,7 +15,7 @@ function flake
 
     switch "$cmd"
         case init
-            _fish_flake_init
+            _fish_flake_init $argv
         case update
             _fish_flake_update
         case status
@@ -24,7 +24,7 @@ function flake
             _fish_flake_clean
         case list
             _fish_flake_list
-        case *
+        case "*"
             echo (set_color red) "unknown command. try one of:"
             echo (set_color red) "init | update | status | clean | list"
     end

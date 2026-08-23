@@ -41,7 +41,7 @@ Updates the Nix lockfile and reloads the workspace
 
 ### Additional
 
-You can modify your prompt to indicate whether or not you're in a workspace. Here's what mine looks like in conjunction with [jorgebucaran/hydro](https://github.com/jorgebucaran/hydro) and with [Nerd Fonts](https://www.nerdfonts.com/):
+You can modify your prompt to indicate whether or not you're in a workspace. Here's what my `config.fish` looks like in conjunction with [jorgebucaran/hydro](https://github.com/jorgebucaran/hydro) and with [Nerd Fonts](https://www.nerdfonts.com/):
 
 ```fish
 set --local symbol " "
