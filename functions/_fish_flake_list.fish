@@ -17,5 +17,6 @@ function _fish_flake_list
 
     echo $json \
       | string match -a -r '"[^"]+"' \
-      | string trim -c '"'
+      | string trim -c '"' \
+      | sed -E 's|.*/[a-z0-9]{32}-||'
 end
