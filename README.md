@@ -42,10 +42,13 @@ Updates the Nix lockfile and reloads the workspace
 
 ### Environment variables
 
-| Variable      | Description                                | Default                                                                                   |
+| Variable | Description | Default |
 | ------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| flake_default    | flake to use if none is specified with `init`    | "github:nixos/templates#utils-generic" |
+| flake_default | flake to use if none is specified with `init` | "github:nixos/templates#utils-generic" |
 | flake_default_repository | repository to use if none is specified with `init` | "github:nixos/templates" |
+
+
+Check out [givensuman/nix-templates](https://github.com/givensuman/nix-templates) as an option to consider.
 
 ### Additional
 
