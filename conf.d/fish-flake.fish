@@ -9,7 +9,7 @@ else
     end
 end
 
-function flake
+function _fish_flake
     set -l cmd $argv[1]
     set -e argv[1]
 
@@ -29,3 +29,26 @@ function flake
             echo (set_color red) "init | update | status | clean | list"
     end
 end
+
+alias flake _fish_flake
+
+function _fish_flake_install --on-event fish-flake_install
+end
+
+function _fish_flake_uninstall --on-event fish-flake_uninstall
+    functions --erase _fish_flake
+    functions --erase flake
+    functions --erase _fish_flake_init
+    functions --erase _fish_flake update
+    functions --erase _fish_flake_status
+    functions --erase _fish_flake_clean
+    functions --erase _fish_flake_list
+    set --erase flake_default
+    set --erase flake_default_repository
+end
+
+function _fish_flake_update --on-event fish-flake_update
+    _fish_flake_uninstall
+    _fish_flake_install
+end
+

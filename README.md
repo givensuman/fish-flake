@@ -20,7 +20,8 @@ Initializes a workspace in the current directory
 
 ```bash
 flake init github:nixos/templates#python
-flake init # defaults to github:nixos/templates#utils-generic
+flake init # defaults to "$flake_default"
+flake init python # defaults to "$flake_default_repository#python"
 ```
 
 `flake clean`
@@ -38,6 +39,13 @@ Status information for the current workspace
 `flake update`
 
 Updates the Nix lockfile and reloads the workspace
+
+### Environment variables
+
+| Variable      | Description                                | Default                                                                                   |
+| ------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| flake_default    | flake to use if none is specified with `init`    | "github:nixos/templates#utils-generic" |
+| flake_default_repository | repository to use if none is specified with `init` | "github:nixos/templates" |
 
 ### Additional
 
