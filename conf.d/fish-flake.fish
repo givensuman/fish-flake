@@ -3,7 +3,7 @@ if not type -q nix
     echo "but don't have nix installed"
 else
     if not type -q nix flake
-        echo "you're souring the plugin for nix flakes"
+        echo "you're sourcing the plugin for nix flakes"
         echo "but don't have flakes enabled"
         echo "https://nixos.wiki/wiki/flakes"
     end
